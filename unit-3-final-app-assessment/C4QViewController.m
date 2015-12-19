@@ -8,6 +8,8 @@
 
 #import "C4QViewController.h"
 #import "C4QColorPickerViewController.h"
+#import "C4QCatFactsTableViewController.h"
+
 
 @interface C4QViewController ()<ColorPickerDelegate>
 
@@ -28,9 +30,17 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"CatFacts"]) {
+        C4QCatFactsTableViewController *vc = segue.destinationViewController;
+        vc.viewController = self;
+
+    } else {
     C4QColorPickerViewController *svc = segue.destinationViewController;
     svc.delegate = self;
+    }
 }
+
+
 
 
 @end
