@@ -11,5 +11,6 @@
 @interface TableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *catFactLabel;
 @property (nonatomic) NSString *selectedCatFact;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
 @end

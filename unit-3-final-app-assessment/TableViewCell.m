@@ -23,22 +23,28 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([defaults objectForKey:@"savedFacts"]) {
-        NSArray *catFactsArray = [defaults objectForKey:@"savedFacts"];
-        NSMutableArray *catFactsMut = [catFactsArray mutableCopy];
-        for(NSString *catfact in catFactsArray){
-            if (self.selectedCatFact != catfact) {
-                [catFactsMut addObject:self.selectedCatFact];
-                NSArray *finalCatFactsArray = [catFactsMut copy];
-                [defaults setObject:finalCatFactsArray forKey:@"savedFacts"];
-            }
-        }
-        
-    } else {
+    // check to see if there is any savedFacts
+    if ([defaults objectForKey:@"savedFacts"] == nil) {
         NSArray *catFactsArray = [[NSArray alloc]initWithObjects:self.selectedCatFact, nil];
         [defaults setObject:catFactsArray forKey:@"savedFacts"];
     }
-    
+    // if saved before, break
+    NSArray *savedFacts = [defaults objectForKey:@"savedFacts"];
+    BOOL savedBefore = NO;
+    for (NSString *fact in savedFacts) {
+        if ([fact isEqualToString:self.catFactLabel.text]) {
+            savedBefore = YES;
+            break;
+        }
+    }
+    // add newSaveFacts
+    if (savedBefore == NO) {
+        NSArray *newSaveFacts = [savedFacts arrayByAddingObject:self.catFactLabel.text];
+        [defaults setObject:newSaveFacts forKey:@"savedFacts"];
+        [defaults synchronize];
+    }
+
+    // add alert
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Saved" message:@"New Cat Fact Saved!" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
@@ -51,5 +57,6 @@
     
 
 }
+
 
 @end
