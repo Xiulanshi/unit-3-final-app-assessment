@@ -24,9 +24,10 @@
     self.tableView.delegate = self;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 12.0;
+    self.tableView.estimatedRowHeight = 20.0;
     
     self.savedCatFacts = [[[NSUserDefaults standardUserDefaults] objectForKey:@"savedFacts"] mutableCopy];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +43,8 @@
     [self.savedCatFacts removeObjectAtIndex:indexPath.row];
         
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+        
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

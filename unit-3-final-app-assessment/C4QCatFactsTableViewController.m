@@ -33,6 +33,9 @@
     
     //register the nib for the cell identifier
     [self.tableView registerNib:nib forCellReuseIdentifier:@"CatFactIdentifier"];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 20.0;
 
 }
 
@@ -94,11 +97,20 @@
     navVC.navigationBar.topItem.title = @"Saved Cat Facts";
     navVC.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView:)];
     
+    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(delete:)];
+    navVC.navigationBar.topItem.rightBarButtonItem = deleteButton;
     [self.navigationController presentViewController:navVC animated:YES completion:nil];
 
 }
                                                      
 - (void) dismissView:(id)sender {
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) delete:(id)sender {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"savedFacts"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

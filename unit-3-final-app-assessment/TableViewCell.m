@@ -26,9 +26,14 @@
     if ([defaults objectForKey:@"savedFacts"]) {
         NSArray *catFactsArray = [defaults objectForKey:@"savedFacts"];
         NSMutableArray *catFactsMut = [catFactsArray mutableCopy];
-        [catFactsMut addObject:self.selectedCatFact];
-        NSArray *finalCatFactsArray = [catFactsMut copy];
-        [defaults setObject:finalCatFactsArray forKey:@"savedFacts"];
+        for(NSString *catfact in catFactsArray){
+            if (self.selectedCatFact != catfact) {
+                [catFactsMut addObject:self.selectedCatFact];
+                NSArray *finalCatFactsArray = [catFactsMut copy];
+                [defaults setObject:finalCatFactsArray forKey:@"savedFacts"];
+            }
+        }
+        
     } else {
         NSArray *catFactsArray = [[NSArray alloc]initWithObjects:self.selectedCatFact, nil];
         [defaults setObject:catFactsArray forKey:@"savedFacts"];
