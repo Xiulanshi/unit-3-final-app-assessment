@@ -143,21 +143,17 @@
     
     [cell.catFactLabel sizeToFit];
     
-    /*
-     [cell.catFactButton setImage:[UIImage imageNamed:@"add_icon"] forState:UIControlStateNormal];
-     
-     //check if the fact displayed in the cell has been saved before
-     NSArray *savedFacts = [[NSUserDefaults standardUserDefaults] objectForKey:@"saved"];
-     
-     if (savedFacts != nil) {
-     for (NSString *fact in savedFacts) {
-     if ([fact isEqualToString:cell.catFactLabel.text]) { //saved before
-     [cell.catFactButton setImage:[UIImage imageNamed:@"Checkmark-32"] forState:UIControlStateNormal];
-     }
-     }
-     }
-
-     */
+    [cell.button setImage:[UIImage imageNamed:@"add_icon"] forState:UIControlStateNormal];
+    
+    NSArray *savedFacts = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedFacts"];
+    
+    if (savedFacts != nil) {
+        for (NSString *fact in savedFacts) {
+            if ([fact isEqualToString:cell.catFactLabel.text]) {
+                [cell.button setImage:[UIImage imageNamed:@"Check_mark"] forState:UIControlStateNormal];
+            }
+        }
+    }
     
     return cell;
 }
