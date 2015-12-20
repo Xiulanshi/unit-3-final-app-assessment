@@ -11,10 +11,11 @@
 #import "TableViewCell.h"
 #import "C4QCatFactsDetailViewController.h"
 #import "C4QSavedCatFactsViewController.h"
+#import "TableViewCellDelegate.h"
 
 #define CAT_API_URL @"http://catfacts-api.appspot.com/api/facts?number=100"
 
-@interface C4QCatFactsTableViewController ()
+@interface C4QCatFactsTableViewController () <TableViewCellDelegate>
 
 @property (nonatomic) NSMutableArray *results;
 
@@ -36,16 +37,9 @@
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 20.0;
-
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
     [self fetchCatData];
-    
+
 }
-
-
 
 - (void)fetchCatData {
     
@@ -132,6 +126,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CatFactIdentifier" forIndexPath:indexPath];
+    cell.delegate = self;
     
     NSString *results = self.results[indexPath.row];
     
@@ -163,6 +158,21 @@
     C4QCatFactsDetailViewController *vc = (C4QCatFactsDetailViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"CatFactDetailVC"];
     vc.catFact = [self.results objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+- (void)catFactsTableViewCellDidSaveFact:(TableViewCell *)catCell {
+    [self.tableView reloadData];
+    
+    // add alert
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Saved" message:@"New Cat Fact Saved!" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:okButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 

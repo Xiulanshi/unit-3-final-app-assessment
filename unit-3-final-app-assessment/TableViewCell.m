@@ -42,20 +42,9 @@
         NSArray *newSaveFacts = [savedFacts arrayByAddingObject:self.catFactLabel.text];
         [defaults setObject:newSaveFacts forKey:@"savedFacts"];
         [defaults synchronize];
+        
+        [self.delegate catFactsTableViewCellDidSaveFact:self];
     }
-
-    // add alert
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Saved" message:@"New Cat Fact Saved!" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-        [alert dismissViewControllerAnimated:YES completion:nil];
-    }];
-    
-    [alert addAction:okButton];
-    
-    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-    
-
 }
 
 

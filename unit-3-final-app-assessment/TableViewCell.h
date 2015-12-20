@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewCellDelegate.h"
 
 @interface TableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *catFactLabel;
 @property (nonatomic) NSString *selectedCatFact;
 @property (nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic)id<TableViewCellDelegate>delegate;
 
 @end

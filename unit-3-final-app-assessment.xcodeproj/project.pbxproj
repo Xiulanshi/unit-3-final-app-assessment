@@ -50,6 +50,7 @@
 		D9FFAB0A1C26156E002F0E33 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		D9FFAB101C265091002F0E33 /* C4QSavedCatFactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QSavedCatFactsViewController.h; sourceTree = "<group>"; };
 		D9FFAB111C265091002F0E33 /* C4QSavedCatFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QSavedCatFactsViewController.m; sourceTree = "<group>"; };
+		D9FFAB141C268B14002F0E33 /* TableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +114,7 @@
 				D9FFAB081C26156E002F0E33 /* TableViewCell.h */,
 				D9FFAB091C26156E002F0E33 /* TableViewCell.m */,
 				D9FFAB0A1C26156E002F0E33 /* TableViewCell.xib */,
+				D9FFAB141C268B14002F0E33 /* TableViewCellDelegate.h */,
 				D9FFAB101C265091002F0E33 /* C4QSavedCatFactsViewController.h */,
 				D9FFAB111C265091002F0E33 /* C4QSavedCatFactsViewController.m */,
 				8DA03F721C2499F400328B53 /* C4QCatFactsDetailViewController.h */,
