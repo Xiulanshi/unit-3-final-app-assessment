@@ -159,7 +159,7 @@
                     <navigationItem key="navigationItem" title="Cat Facts" id="Wcl-Wy-q65">
                         <barButtonItem key="rightBarButtonItem" title="Saved" id="NHB-4B-4AW">
                             <connections>
-                                <segue destination="ggb-KP-WI3" kind="show" identifier="savedCatFactIdentifier" id="nak-HQ-PnI"/>
+                                <action selector="savedButtonTapped:" destination="Q41-6z-oZL" id="PXQ-Ll-Qcc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -171,7 +171,7 @@
         <!--Saved Cat Facts View Controller-->
         <scene sceneID="X6S-3z-d00">
             <objects>
-                <viewController id="ggb-KP-WI3" customClass="C4QSavedCatFactsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SavedCatFactsVC" id="ggb-KP-WI3" customClass="C4QSavedCatFactsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IGU-c3-Gta"/>
                         <viewControllerLayoutGuide type="bottom" id="fgK-SE-Xv8"/>
@@ -181,8 +181,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HFG-sk-eyf">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedCatFactIdentifier" textLabel="lcC-91-dUk" style="IBUITableViewCellStyleDefault" id="WrO-vQ-JgP">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WrO-vQ-JgP" id="e3d-mV-phc">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lcC-91-dUk">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

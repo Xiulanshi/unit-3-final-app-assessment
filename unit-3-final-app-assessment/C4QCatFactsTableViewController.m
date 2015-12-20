@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "TableViewCell.h"
 #import "C4QCatFactsDetailViewController.h"
+#import "C4QSavedCatFactsViewController.h"
 
 #define CAT_API_URL @"http://catfacts-api.appspot.com/api/facts?number=100"
 
@@ -85,6 +86,22 @@
 
     
 }
+
+
+- (IBAction)savedButtonTapped:(UIBarButtonItem *)sender {
+    C4QSavedCatFactsViewController *savedVC = (C4QSavedCatFactsViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"SavedCatFactsVC"];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:savedVC];
+    navVC.navigationBar.topItem.title = @"Saved Cat Facts";
+    navVC.navigationBar.topItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView:)];
+    
+    [self.navigationController presentViewController:navVC animated:YES completion:nil];
+
+}
+                                                     
+- (void) dismissView:(id)sender {
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 #pragma mark - Table view data source
 
