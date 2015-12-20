@@ -45,7 +45,6 @@
 
 - (void)fetchCatData {
     
-   // NSString *urlString = [NSString stringWithFormat:CAT_API_URL];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/javascript"];
@@ -89,6 +88,8 @@
 
 #pragma mark - Table view data source
 
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -105,10 +106,28 @@
     
     NSString *results = self.results[indexPath.row];
     
+    cell.selectedCatFact = results;
+    
     cell.catFactLabel.text = results;
+    
+    cell.catFactLabel.textAlignment = NSTextAlignmentJustified;
+    
+    [cell.catFactLabel sizeToFit];
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    C4QCatFactsDetailViewController *vc = (C4QCatFactsDetailViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"CatFactDetailVC"];
+    vc.catFact = [self.results objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+
+
+
 
 
 

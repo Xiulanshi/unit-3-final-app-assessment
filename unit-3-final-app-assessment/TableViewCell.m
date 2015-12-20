@@ -19,5 +19,24 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)AddButtonTapped:(id)sender {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *starWarsKey = @"MovieKey";
+    
+    [defaults setObject:@"Star Wars" forKey:starWarsKey];
+    
+    if ([defaults objectForKey:starWarsKey]) {
+        NSLog(@"Let's go home early...");
+    } else {
+        NSLog(@"Let's keep going...");
+    }
+    
+    NSArray *arr = @[];
+    NSMutableArray *mArr = [arr mutableCopy];
+    [mArr addObject:@"butt"];
+
+}
 
 @end

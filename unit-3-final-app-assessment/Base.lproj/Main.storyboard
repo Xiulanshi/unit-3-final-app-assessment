@@ -146,6 +146,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fmu-ZQ-hbX" kind="showDetail" id="tIY-Br-DKt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -158,6 +161,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yux-EA-lvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1356" y="677"/>
+        </scene>
+        <!--Cat Facts Detail View Controller-->
+        <scene sceneID="zFa-KS-uM0">
+            <objects>
+                <viewController storyboardIdentifier="CatFactDetailVC" id="fmu-ZQ-hbX" customClass="C4QCatFactsDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qsY-2z-9bv"/>
+                        <viewControllerLayoutGuide type="bottom" id="N6i-57-cYW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FcW-zs-Eb5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q9I-pj-yLN">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70Q-9L-6DG">
+                                <rect key="frame" x="40" y="290" width="520" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="70Q-9L-6DG" secondAttribute="trailing" constant="40" id="0vR-sB-5hC"/>
+                            <constraint firstItem="70Q-9L-6DG" firstAttribute="leading" secondItem="FcW-zs-Eb5" secondAttribute="leading" constant="40" id="1Te-DK-EPp"/>
+                            <constraint firstItem="70Q-9L-6DG" firstAttribute="centerY" secondItem="FcW-zs-Eb5" secondAttribute="centerY" id="1x0-rA-gBR"/>
+                            <constraint firstAttribute="trailing" secondItem="Q9I-pj-yLN" secondAttribute="trailing" id="8Bh-6S-Ode"/>
+                            <constraint firstItem="70Q-9L-6DG" firstAttribute="centerX" secondItem="FcW-zs-Eb5" secondAttribute="centerX" id="9rc-OE-uFf"/>
+                            <constraint firstItem="N6i-57-cYW" firstAttribute="top" secondItem="Q9I-pj-yLN" secondAttribute="bottom" id="GtD-n0-XX4"/>
+                            <constraint firstItem="Q9I-pj-yLN" firstAttribute="leading" secondItem="FcW-zs-Eb5" secondAttribute="leading" id="KhF-bC-2ml"/>
+                            <constraint firstItem="Q9I-pj-yLN" firstAttribute="top" secondItem="qsY-2z-9bv" secondAttribute="bottom" id="ose-u3-GD2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="catFactLabel" destination="70Q-9L-6DG" id="2wI-ig-mOn"/>
+                        <outlet property="catImageView" destination="Q9I-pj-yLN" id="L60-dg-5s7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIs-V8-lfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="677"/>
         </scene>
     </scenes>
 </document>
