@@ -11,7 +11,7 @@
 @interface C4QSavedCatFactsViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic) NSArray* savedCatFacts;
+@property (nonatomic) NSMutableArray *savedCatFacts;
 
 @end
 
@@ -26,13 +26,28 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 12.0;
     
-    self.savedCatFacts = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedFacts"];
+    self.savedCatFacts = [[[NSUserDefaults standardUserDefaults] objectForKey:@"savedFacts"] mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        
+    [self.savedCatFacts removeObjectAtIndex:indexPath.row];
+        
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+
 
 #pragma mark - Table view data source
 
