@@ -26,15 +26,15 @@
     self.redButton.backgroundColor = [UIColor redColor];
 }
 - (IBAction)redButtonTapped:(id)sender {
-    [self.delegate userDidSelectRedButton:self.redButton.backgroundColor];
+    [self.delegate userDidSelectColor:self.redButton.backgroundColor];
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)greenButtonTapped:(id)sender {
-    [self.delegate userDidSelectGreenButton:self.greenButton.backgroundColor];
+    [self.delegate userDidSelectColor:self.greenButton.backgroundColor];
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)blueButtonTapped:(id)sender {
-    [self.delegate userDidSelectBlueButton:self.blueButton.backgroundColor];
+    [self.delegate userDidSelectColor:self.blueButton.backgroundColor];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

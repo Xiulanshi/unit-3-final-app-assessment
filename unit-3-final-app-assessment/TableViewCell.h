@@ -10,6 +10,5 @@
 
 @interface TableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *catFactLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *addIconImage;
 
 @end

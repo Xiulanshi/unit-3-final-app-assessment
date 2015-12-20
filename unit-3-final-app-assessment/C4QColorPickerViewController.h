@@ -10,9 +10,7 @@
 
 @protocol ColorPickerDelegate <NSObject>
 
--(void)userDidSelectRedButton:(UIColor *)red;
--(void)userDidSelectGreenButton:(UIColor *)green;
--(void)userDidSelectBlueButton:(UIColor *)blue;
+-(void)userDidSelectColor:(UIColor *)color;
 
 @end
 

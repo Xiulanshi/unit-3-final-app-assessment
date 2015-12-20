@@ -7,43 +7,39 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatFactIdentifier" rowHeight="90" id="KGk-i7-Jjw" customClass="TableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatFactIdentifier" rowHeight="160" id="KGk-i7-Jjw" customClass="TableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="407" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="407" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH4-1C-ZsB">
-                        <rect key="frame" x="20" y="34" width="313" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH4-1C-ZsB">
+                        <rect key="frame" x="20" y="20" width="329" height="49"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_icon" translatesAutoresizingMaskIntoConstraints="NO" id="w9Y-1k-lyy">
-                        <rect key="frame" x="341" y="22" width="46" height="46"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urL-fA-EOB">
+                        <rect key="frame" x="357" y="30" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="46" id="6N6-uR-qyh"/>
-                            <constraint firstAttribute="width" constant="46" id="PIV-XW-O9g"/>
+                            <constraint firstAttribute="height" constant="30" id="FgM-cX-nYb"/>
+                            <constraint firstAttribute="width" constant="30" id="gZS-uq-8lN"/>
                         </constraints>
-                    </imageView>
+                        <state key="normal" title="Button" image="add_icon"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="w9Y-1k-lyy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6pT-3M-qwN"/>
-                    <constraint firstItem="w9Y-1k-lyy" firstAttribute="leading" secondItem="PH4-1C-ZsB" secondAttribute="trailing" constant="8" id="ChI-gd-fUj"/>
-                    <constraint firstAttribute="trailing" secondItem="w9Y-1k-lyy" secondAttribute="trailing" constant="16" id="PZl-2c-iGi"/>
-                    <constraint firstAttribute="trailing" secondItem="w9Y-1k-lyy" secondAttribute="trailing" constant="20" symbolic="YES" id="SAq-NR-2Sg"/>
+                    <constraint firstAttribute="bottom" secondItem="PH4-1C-ZsB" secondAttribute="bottom" constant="20" symbolic="YES" id="5HZ-5o-RZd"/>
+                    <constraint firstAttribute="trailing" secondItem="urL-fA-EOB" secondAttribute="trailing" constant="20" symbolic="YES" id="CWy-bp-DXR"/>
+                    <constraint firstItem="urL-fA-EOB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="J6Z-wd-7Wg"/>
+                    <constraint firstItem="PH4-1C-ZsB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="PFM-vA-tlD"/>
                     <constraint firstItem="PH4-1C-ZsB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="esv-uS-C5L"/>
+                    <constraint firstItem="urL-fA-EOB" firstAttribute="leading" secondItem="PH4-1C-ZsB" secondAttribute="trailing" constant="8" symbolic="YES" id="jDa-OR-0p0"/>
                     <constraint firstItem="PH4-1C-ZsB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="z9t-vl-YN7"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="PZl-2c-iGi"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="addIconImage" destination="w9Y-1k-lyy" id="Hof-z6-EdF"/>
                 <outlet property="catFactLabel" destination="PH4-1C-ZsB" id="wti-pR-X5g"/>
             </connections>
             <point key="canvasLocation" x="271.5" y="288"/>
