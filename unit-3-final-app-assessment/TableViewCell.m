@@ -23,19 +23,27 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *starWarsKey = @"MovieKey";
-    
-    [defaults setObject:@"Star Wars" forKey:starWarsKey];
-    
-    if ([defaults objectForKey:starWarsKey]) {
-        NSLog(@"Let's go home early...");
+    if ([defaults objectForKey:@"savedFacts"]) {
+        NSArray *catFactsArray = [defaults objectForKey:@"savedFacts"];
+        NSMutableArray *catFactsMut = [catFactsArray mutableCopy];
+        [catFactsMut addObject:self.selectedCatFact];
+        NSArray *finalCatFactsArray = [catFactsMut copy];
+        [defaults setObject:finalCatFactsArray forKey:@"savedFacts"];
     } else {
-        NSLog(@"Let's keep going...");
+        NSArray *catFactsArray = [[NSArray alloc]initWithObjects:self.selectedCatFact, nil];
+        [defaults setObject:catFactsArray forKey:@"savedFacts"];
     }
     
-    NSArray *arr = @[];
-    NSMutableArray *mArr = [arr mutableCopy];
-    [mArr addObject:@"butt"];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Saved" message:@"New Cat Fact Saved!" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alert addAction:okButton];
+    
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    
 
 }
 

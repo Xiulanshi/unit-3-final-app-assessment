@@ -47,9 +47,9 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/javascript"];
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+ //   manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/javascript"];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
     [manager GET:CAT_API_URL
       parameters:nil
@@ -58,12 +58,12 @@
              
               //NSLog(@"response object: %@", responseObject);
              
-//             NSError *error;
-//             NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
+             NSError *error;
+             NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
              
-         //    NSArray *resultsArray = [jsonDictionary objectForKey:@"facts"];
+             NSArray *resultsArray = [jsonDictionary objectForKey:@"facts"];
              
-             NSArray *resultsArray = [responseObject objectForKey:@"facts"];
+           //  NSArray *resultsArray = [responseObject objectForKey:@"facts"];
              
              
              self.results = [[NSMutableArray alloc] init];

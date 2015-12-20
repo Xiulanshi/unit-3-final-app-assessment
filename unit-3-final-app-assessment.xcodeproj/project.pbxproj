@@ -19,6 +19,7 @@
 		8DA03F741C2499F400328B53 /* C4QCatFactsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA03F731C2499F400328B53 /* C4QCatFactsDetailViewController.m */; };
 		D9FFAB0B1C26156E002F0E33 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FFAB091C26156E002F0E33 /* TableViewCell.m */; };
 		D9FFAB0C1C26156E002F0E33 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FFAB0A1C26156E002F0E33 /* TableViewCell.xib */; };
+		D9FFAB121C265091002F0E33 /* C4QSavedCatFactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FFAB111C265091002F0E33 /* C4QSavedCatFactsViewController.m */; };
 		DD8FD6DEC146B4B1C1F45D98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A44461502C751D156694EAA4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		D9FFAB081C26156E002F0E33 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D9FFAB091C26156E002F0E33 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D9FFAB0A1C26156E002F0E33 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		D9FFAB101C265091002F0E33 /* C4QSavedCatFactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C4QSavedCatFactsViewController.h; sourceTree = "<group>"; };
+		D9FFAB111C265091002F0E33 /* C4QSavedCatFactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C4QSavedCatFactsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				D9FFAB081C26156E002F0E33 /* TableViewCell.h */,
 				D9FFAB091C26156E002F0E33 /* TableViewCell.m */,
 				D9FFAB0A1C26156E002F0E33 /* TableViewCell.xib */,
+				D9FFAB101C265091002F0E33 /* C4QSavedCatFactsViewController.h */,
+				D9FFAB111C265091002F0E33 /* C4QSavedCatFactsViewController.m */,
 				8DA03F721C2499F400328B53 /* C4QCatFactsDetailViewController.h */,
 				8DA03F731C2499F400328B53 /* C4QCatFactsDetailViewController.m */,
 				8D87530C1C24774700BBD328 /* Main.storyboard */,
@@ -260,6 +265,7 @@
 				8D610EA41C2477EB00AADDC2 /* C4QViewController.m in Sources */,
 				D9FFAB0B1C26156E002F0E33 /* TableViewCell.m in Sources */,
 				8D610EA11C2477EB00AADDC2 /* C4QColorPickerViewController.m in Sources */,
+				D9FFAB121C265091002F0E33 /* C4QSavedCatFactsViewController.m in Sources */,
 				8D610EA21C2477EB00AADDC2 /* C4QRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
